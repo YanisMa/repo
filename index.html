@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yanis — blog personnel</title>
+  <meta name="description" content="Yanis — Étudiant en cybersécurité réseaux à Sorbonne Université. Projets : scanner SYN C++, honeypots, pentest, analyseur Flex/Bison + compilateur ASM, compression QuadTree, jeux et plus." />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="wrap header-grid">
+      <div class="brand">
+        <h1>Yanis</h1>
+        <p class="subtitle">Étudiant en cybersécurité réseaux à Sorbonne Université à Paris — ceci est mon blog personnel.</p>
+      </div>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#projects">Projets</a>
+        <a href="#skills-icons">Compétences</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="hero wrap">
+      <div class="hero-inner">
+        <div class="lead-col">
+          <h2>Sécurité réseau, pentest et projets logiciels — notes & retours d’expérience</h2>
+          <p class="lead">Je me concentre sur les outils réseau, la détection et l’infrastructure sécurisée. Je pratique régulièrement la sécurité offensive (Root-Me : <strong>3080 pts</strong>) et je construis des outils pour étudier les comportements d’attaque.</p>
+          <p class="cta">
+            <a class="btn" href="#projects">Voir les projets</a>
+            <a class="btn ghost" href="#contact">Me contacter</a>
+          </p>
+        </div>
+        <aside class="info-card">
+          <h3>En bref</h3>
+          <ul>
+            <li><strong>Localisation :</strong> Paris, France</li>
+            <li><strong>Établissement :</strong> Sorbonne Université (cybersécurité réseaux)</li>
+            <li><strong>Root-Me :</strong> 3080 pts</li>
+            <li><strong>Stacks :</strong> C/C++, Python, Java, Linux</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== PROJETS ===== -->
+    <section id="projects" class="wrap section">
+      <h2>Projets sélectionnés</h2>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>Scanner TCP SYN — C++</h3>
+          <div class="project-content">
+            <p>Scanner TCP SYN haute performance développé en C++ pour cartographier des services sur de grands sous-réseaux. Parallélisation, fingerprinting, contrôle de débit et export CSV pour l’analyse.</p>
+            <p class="meta"><strong>Tech :</strong> C++, sockets, multithreading</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Honeypots & pipeline de détection</h3>
+          <div class="project-content">
+            <p>Déploiement et supervision de plusieurs honeypots afin de capter et analyser les attaques réseau. Centralisation des logs, parsers, enrichissement automatique (réputation IP) et visualisation sur dashboard.</p>
+            <p class="meta"><strong>Tech :</strong> Python, Docker, journaux centralisés, IDS</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Analyseur & compilateur ASM — tpc</h3>
+          <div class="project-content">
+            <p><strong>Nov. 2024 – Janv. 2025 — Université Gustave Eiffel</strong> — En binôme : lexer/parser (Flex/Bison), AST, détection d’erreurs et génération de code assembleur pour <em>tpc</em> (sous-ensemble de C).</p>
+            <p class="meta"><strong>Tech :</strong> Flex, Bison, C, ASM</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Compression d’images — QuadTree</h3>
+          <div class="project-content">
+            <p><strong>Oct. 2024 – Janv. 2025 — Université Gustave Eiffel</strong> — Compression d’images en niveaux de gris via QuadTree. Encodeur/décodeur <code>.qtc</code> et bibliothèque C partagée optimisée sous Linux.</p>
+            <p class="meta"><strong>Tech :</strong> C, QuadTree, formats binaires</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Jeu type Cascadia — Java 23</h3>
+          <div class="project-content">
+            <p>Jeu stratégique inspiré de Cascadia (placement de tuiles). Architecture modulaire, IA simple et logique de scoring.</p>
+            <p class="meta"><strong>Tech :</strong> Java 23</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Abeilles vs Frelons — C</h3>
+          <div class="project-content">
+            <p>Simulation d’écosystème : grille, ressources, listes chaînées, cycles de récolte/combat. Interface libMLV et sauvegardes.</p>
+            <p class="meta"><strong>Tech :</strong> C, libMLV</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Site & BDD — PostgreSQL / Flask</h3>
+          <div class="project-content">
+            <p>Application de gestion de commandes (Fleuropa). Schéma relationnel, authentification, suivi temps réel et paiement sécurisé.</p>
+            <p class="meta"><strong>Tech :</strong> Python, Flask, PostgreSQL</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Enveloppe convexe — C</h3>
+          <div class="project-content">
+            <p>Implémentation de l’algorithme de Jarvis pour calculer l’enveloppe convexe d’un ensemble de points. Optimisation des structures chaînées.</p>
+            <p class="meta"><strong>Tech :</strong> C, algorithmique</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Ricocheep — Python</h3>
+          <div class="project-content">
+            <p>Jeu graphique en Python utilisant divers algorithmes de tri pour optimiser les scores et les animations.</p>
+            <p class="meta"><strong>Tech :</strong> Python</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Création & médias</h3>
+          <div class="project-content">
+            <p>Créateur vidéo VFX/GFX — Cinema 4D & After Effects. Vente d’intros via Sellfy et tutoriels de motion design.</p>
+            <p class="meta"><strong>Outils :</strong> C4D, After Effects, Sellfy</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== COMPÉTENCES (icônes) ===== -->
+    <section id="skills-icons" class="wrap section">
+      <h2>Compétences</h2>
+      <p class="hint">Passe ta souris sur une icône pour voir le détail.</p>
+
+      <div class="icons-grid">
+
+        <div class="skill-card">
+          <img src="images/icons8-burp-suite-50.png" alt="Burp Suite" loading="lazy">
+          <span class="badge">Burp Suite</span>
+          <div class="tooltip"><strong>Burp Suite</strong><p>Proxy, repeater, intruder, scanner (audit d’applications web).</p></div>
+        </div>
+
+        <div class="skill-card">
+          <img src="images/icons8-python-48.png" alt="Python" loading="lazy">
+          <span class="badge">Python</span>
+          <div class="tooltip"><strong>Python</strong><p>Scripts réseau, outils pentest, parsing de logs, petits jeux.</p></div>
+        </div>
+
+        <div class="skill-card">
+          <img src="images/icons8-c++-48.png" alt="C++" loading="lazy">
+          <span class="badge">C++</span>
+          <div class="tooltip"><strong>C++</strong><p>SYN scanner performant, bas niveau réseau.</p></div>
+        </div>
+
+        <div class="skill-card">
+          <img src="images/java.png" alt="Java" loading="lazy">
+          <span class="badge">Java</span>
+          <div class="tooltip"><strong>Java</strong><p>Jeux académiques (Java 23), archi modulaire.</p></div>
+        </div>
+
+        <div class="skill-card">
+          <img src="images/icons8-haskel-48.png" alt="Haskell" loading="lazy">
+          <span class="badge">Haskell</span>
+          <div class="tooltip"><strong>Haskell</strong><p>Notions de FP, raisonnement & types.</p></div>
+        </div>
+
+        <div class="skill-card">
+          <img src="images/linux.png" alt="Linux" loading="lazy">
+          <span class="badge">Linux</span>
+          <div class="tooltip"><strong>Linux</strong><p>Admin, Bash, réseau, durcissement.</p></div>
+        </div>
+
+        <div class="skill-card">
+          <img src="images/icons8-logo-javascript-48.png" alt="JavaScript" loading="lazy">
+          <span class="badge">JavaScript</span>
+          <div class="tooltip"><strong>JavaScript</strong><p>Interfaces simples, petits outils web.</p></div>
+        </div>
+
+        <div class="skill-card">
+          <img src="images/sitelogo-nmap-software-llc-168.90.png" alt="Nmap" loading="lazy">
+          <span class="badge">Nmap</span>
+          <div class="tooltip"><strong>Nmap</strong><p>Scan services, NSE, cartographie.</p></div>
+        </div>
+
+        <div class="skill-card">
+          <img src="images/icons8-php-48.png" alt="PHP" loading="lazy">
+          <span class="badge">PHP</span>
+          <div class="tooltip"><strong>PHP</strong><p>Notions backends simples.</p></div>
+        </div>
+
+        <div class="skill-card">
+          <img src="images/sql.png" alt="SQL" loading="lazy">
+          <span class="badge">SQL</span>
+          <div class="tooltip"><strong>SQL</strong><p>Modélisation & requêtes, PostgreSQL.</p></div>
+        </div>
+
+        <div class="skill-card">
+          <img src="images/icons8-programmation-en-c-48.png" alt="C" loading="lazy">
+          <span class="badge">C</span>
+          <div class="tooltip"><strong>C</strong><p>Système, formats binaires, sockets.</p></div>
+        </div>
+
+        <div class="skill-card">
+          <img src="images/Wireshark_Icon.png" alt="Wireshark" loading="lazy">
+          <span class="badge">Wireshark</span>
+          <div class="tooltip"><strong>Wireshark</strong><p>PCAP, filtres, diagnostic réseau.</p></div>
+        </div>
+
+        <!-- Carte "..." -->
+        <div class="skill-card extra">
+          <div class="dots">...</div>
+          <span class="badge">Autres</span>
+          <div class="tooltip">
+            <strong>Autres langages & outils</strong>
+            <p>Flex / Bison • Bash • HTML • CSS • Flask • Docker • Makefile • Git • Jira • PostgreSQL</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="wrap section">
+      <h2>Contact</h2>
+      <p>On peut me joindre ici :</p>
+      <ul class="contact-list">
+        <li>Email : <a href="mailto:maatouk.yanis@gmail.com">maatouk.yanis@gmail.com</a></li>
+        <li>GitHub : <a href="https://github.com/YanisMa" target="_blank" rel="noopener">github.com/YanisMa</a></li>
+        <li>LinkedIn : <a href="https://linkedin.com/in/yanisma" target="_blank" rel="noopener">linkedin.com/in/yanisma</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© Yanis — blog personnel • code source sur GitHub</p>
+    </div>
+  </footer>
+</body>
+</html>

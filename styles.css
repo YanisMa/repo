@@ -1,0 +1,262 @@
+/* =========================
+   Design system
+========================= */
+:root{
+  --bg:#0b0d0f;
+  --surface:rgba(255,255,255,0.02);
+  --surface-2:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+  --text:#e9f5ff;
+  --muted:#9aa4b2;
+  --accent:#5ad1ff;
+  --accent-2:#8ce7ff;
+  --border:rgba(255,255,255,0.08);
+  --border-strong:rgba(255,255,255,0.16);
+  --shadow:0 16px 36px rgba(0,0,0,0.35);
+  --radius:14px;
+  --wrap:1100px;
+
+  /* Icônes */
+  --card-size:116px;
+  --img-size:60px;
+  --gap:16px;
+
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f6f7fb;
+    --surface:rgba(0,0,0,0.03);
+    --surface-2:linear-gradient(180deg, rgba(0,0,0,0.03), transparent);
+    --text:#0d1b2a;
+    --muted:#4a5568;
+    --accent:#0ea5e9;
+    --accent-2:#7dd3fc;
+    --border:rgba(0,0,0,0.08);
+    --border-strong:rgba(0,0,0,0.18);
+    --shadow:0 16px 36px rgba(0,0,0,0.18);
+  }
+}
+
+*{ box-sizing:border-box }
+@media (prefers-reduced-motion: reduce){
+  *{ animation:none !important; transition:none !important }
+}
+
+/* =========================
+   Page & wrappers
+========================= */
+html{
+  /* Offset quand on clique un lien d’ancre (#projects, etc.) */
+  scroll-padding-top: 84px;
+}
+body{
+  margin:0;
+  color:var(--text);
+  background:radial-gradient(1200px 700px at 10% 10%, rgba(26,161,204,.06), transparent 60%),
+             radial-gradient(1200px 700px at 90% 0%, rgba(124,58,237,.08), transparent 65%),
+             linear-gradient(180deg, #081017 0%, #041219 100%);
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  line-height:1.6; font-size:16px;
+}
+.wrap{ max-width:var(--wrap); margin:auto; padding:24px }
+a{ color:var(--accent); text-decoration:none }
+a:hover{ text-decoration:underline }
+
+/* =========================
+   Header / Nav
+========================= */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(8px) saturate(120%);
+  background:linear-gradient(180deg, rgba(4,8,12,.75), rgba(4,8,12,.35));
+  border-bottom:1px solid var(--border);
+}
+.header-grid{ display:flex; align-items:center; justify-content:space-between; gap:18px }
+.brand h1{ margin:0; font-size:26px; letter-spacing:.2px }
+.subtitle{ margin:6px 0 0; color:var(--muted); font-size:13.5px; max-width:60ch }
+.nav a{ color:var(--muted); margin-left:14px; font-size:14px; text-decoration:none }
+.nav a:hover{ color:var(--text) }
+
+/* =========================
+   Sections — séparation visuelle
+========================= */
+.section{
+  padding: 48px 0;                 /* plus d’espace vertical */
+  border-top: 1px solid var(--border);
+  position: relative;
+}
+
+/* Trait (separator) en bas de section, sauf la dernière */
+.section:not(:last-of-type)::after{
+  content:"";
+  position:absolute; left:0; right:0; bottom:0;
+  height:1px; background:var(--border);
+}
+
+/* Variante avec fond subtil pour alterner si besoin */
+.section--alt{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.02), transparent 60%);
+}
+
+/* Titres de section */
+.section h2{
+  margin:0 0 16px;
+  font-size:22px;
+  letter-spacing:.3px;
+}
+.section .section-lead{
+  margin: -4px 0 18px;
+  color: var(--muted);
+}
+
+/* =========================
+   Hero
+========================= */
+.hero .hero-inner{ display:flex; gap:24px; align-items:flex-start }
+.lead-col{ flex:1 }
+.lead-col h2{ margin:8px 0 6px; font-size:26px; line-height:1.25 }
+.lead{ color:var(--muted); margin-top:8px }
+.cta{ margin-top:14px; display:flex; gap:10px }
+.btn{
+  display:inline-block; padding:10px 16px; border-radius:10px;
+  background:linear-gradient(90deg, var(--accent), var(--accent-2));
+  color:#04222e; font-weight:700; text-decoration:none; transition:.2s;
+  box-shadow:0 6px 18px rgba(90, 209, 255, .15);
+}
+.btn:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(90, 209, 255, .25) }
+.btn.ghost{
+  background:transparent; color:var(--text); border:1px solid var(--border);
+  box-shadow:none;
+}
+.btn.ghost:hover{ background:rgba(255,255,255,0.05) }
+
+.info-card{
+  width:330px; flex:0 0 330px;
+  background:var(--surface-2); border:1px solid var(--border);
+  border-radius:var(--radius); padding:16px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+}
+.info-card h3{ margin:0 0 8px }
+.info-card ul{ margin:0; padding-left:18px; color:var(--muted) }
+
+/* =========================
+   Projets — grille homogène
+========================= */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(310px, 1fr));
+  gap:20px;
+}
+.project-card{
+  position:relative;
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:16px;
+  height:260px;               /* même hauteur pour toutes */
+  overflow:hidden;
+  transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+.project-card:hover{
+  transform:translateY(-3px);
+  border-color:var(--border-strong);
+  box-shadow:var(--shadow);
+  z-index:2;
+}
+.project-card h3{ margin:0 0 10px; font-size:16px }
+.project-content{
+  color:var(--muted); font-size:14px;
+  height:150px; overflow:hidden; position:relative;
+}
+.project-content::after{
+  content:""; position:absolute; bottom:0; left:0; right:0; height:42px;
+  background:linear-gradient(to top, rgba(8,16,23,.95), transparent);
+  pointer-events:none;
+}
+.project-card:hover .project-content{ height:auto; max-height:none; overflow:visible }
+.project-card:hover .project-content::after{ display:none }
+.meta{ font-size:13px; color:var(--muted); margin-top:8px }
+
+/* =========================
+   Compétences (icônes)
+========================= */
+#skills-icons .hint{ color:var(--muted); margin:-6px 0 12px; font-size:14px }
+.icons-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(var(--card-size), 1fr));
+  gap:var(--gap);
+}
+.skill-card{
+  position:relative;
+  height:var(--card-size); width:var(--card-size);
+  display:grid; place-items:center; padding:10px;
+  border-radius:12px; background:var(--surface-2);
+  border:1px solid var(--border);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+  transition:transform .18s, box-shadow .22s, border-color .22s, background .22s;
+  cursor:default; overflow:visible;
+}
+.skill-card:hover{
+  transform:translateY(-2px);
+  border-color:var(--border-strong);
+  box-shadow:0 12px 26px rgba(0,0,0,.35);
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+}
+.skill-card img{
+  width:var(--img-size); height:var(--img-size);
+  object-fit:contain; filter:drop-shadow(0 1px 1px rgba(0,0,0,.25));
+  transition:transform .18s;
+}
+.skill-card:hover img{ transform:scale(1.02) }
+.badge{
+  position:absolute; bottom:8px; left:8px; right:8px;
+  text-align:center; font-size:12px; color:var(--muted);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  pointer-events:none;
+}
+
+/* Tooltips */
+.skill-card .tooltip{
+  position:absolute; z-index:30; left:50%; bottom:calc(100% + 10px);
+  transform:translateX(-50%); min-width:230px; max-width:280px;
+  padding:10px 12px; border-radius:10px; color:#e6eef6;
+  background:rgba(16,20,28,.96); border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 16px 34px rgba(0,0,0,.45);
+  opacity:0; pointer-events:none; transition:opacity .16s, transform .16s;
+  backdrop-filter:saturate(120%) blur(6px);
+}
+.skill-card .tooltip::after{
+  content:""; position:absolute; bottom:-8px; left:50%; transform:translateX(-50%);
+  border:8px solid transparent; border-top-color:rgba(16,20,28,.96);
+  filter:drop-shadow(0 -1px 0 rgba(255,255,255,.08));
+}
+.skill-card:hover .tooltip{ opacity:1; transform:translateX(-50%) translateY(-2px) }
+
+/* Carte "..." */
+.skill-card.extra .dots{
+  font-size:28px; letter-spacing:2px; color:var(--muted); transition:color .18s;
+}
+.skill-card.extra:hover .dots{ color:var(--text) }
+
+/* =========================
+   Contact & footer
+========================= */
+.contact-list{ margin:0; padding-left:18px }
+.site-footer{ border-top:1px solid var(--border); padding:18px 0; color:var(--muted); text-align:center }
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width:980px){
+  .hero .hero-inner{ flex-direction:column }
+  .info-card{ width:100% }
+}
+@media (max-width:650px){
+  .wrap{ padding:16px }
+  .nav{ display:none }
+  :root{ --card-size:102px; --img-size:52px; --gap:12px }
+  .project-card{ height:auto }
+  .project-content::after{ display:none }
+}
