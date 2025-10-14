@@ -1,21 +1,22 @@
-/* =========================
-   Design system
-========================= */
+/* =========================================
+   Design system — lisible, contrasté, responsive
+========================================= */
 :root{
-  --bg:#0b0d0f;
-  --surface:rgba(255,255,255,0.03);
-  --surface-2:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-  --text:#f1f7ff;                /* plus clair = meilleure lisibilité */
-  --muted:#b7c3cf;               /* plus lisible que #9aa4b2 */
-  --accent:#5ad1ff;
-  --accent-2:#8ce7ff;
-  --border:rgba(255,255,255,0.10);
-  --border-strong:rgba(255,255,255,0.2);
-  --shadow:0 18px 40px rgba(0,0,0,0.35);
+  --bg:#0a0d12;
+  --bg-2:#0d131a;
+  --surface:rgba(255,255,255,0.035);
+  --surface-2:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  --text:#f2f6fb;           /* blanc argenté (lecture++) */
+  --muted:#c3ced9;          /* gris doux lisible */
+  --accent:#61dafb;         /* bleu clair agréable */
+  --accent-2:#9be8ff;
+  --border:rgba(255,255,255,0.12);
+  --border-strong:rgba(255,255,255,0.22);
+  --shadow:0 18px 42px rgba(0,0,0,0.38);
   --radius:14px;
   --wrap:1100px;
 
-  /* Icônes */
+  /* Icônes compétences */
   --card-size:116px;
   --img-size:60px;
   --gap:16px;
@@ -27,112 +28,153 @@
 
 @media (prefers-color-scheme: light){
   :root{
-    --bg:#f6f7fb;
-    --surface:rgba(0,0,0,0.02);
-    --surface-2:linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.01));
-    --text:#0b1726;
-    --muted:#485769;
+    --bg:#f7f9fc;
+    --bg-2:#eef3f9;
+    --surface:rgba(0,0,0,0.03);
+    --surface-2:linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
+    --text:#0b1524;
+    --muted:#465a71;
     --accent:#0ea5e9;
     --accent-2:#7dd3fc;
-    --border:rgba(0,0,0,0.10);
-    --border-strong:rgba(0,0,0,0.2);
-    --shadow:0 18px 40px rgba(0,0,0,0.15);
+    --border:rgba(0,0,0,0.12);
+    --border-strong:rgba(0,0,0,0.22);
+    --shadow:0 18px 40px rgba(0,0,0,0.16);
   }
 }
 
-/* =========================
-   Mise en page & accessibilité
-========================= */
+/* =========================================
+   Base & accessibilité
+========================================= */
 *{ box-sizing:border-box }
 @media (prefers-reduced-motion: reduce){
   *{ animation:none !important; transition:none !important }
 }
 
 html{
-  /* ancre confortable quand on clique #projects etc */
-  scroll-padding-top: 90px;
+  scroll-behavior:smooth;
+  scroll-padding-top: 90px; /* liens d’ancre agréables */
 }
 
 body{
   margin:0;
   color:var(--text);
   background:
-    radial-gradient(1200px 700px at 10% 10%, rgba(26,161,204,.08), transparent 60%),
-    radial-gradient(1200px 700px at 90% 0%, rgba(124,58,237,.10), transparent 65%),
-    linear-gradient(180deg, #081017 0%, #041219 100%);
+    radial-gradient(1100px 600px at 10% 5%, rgba(97,218,251,.07), transparent 60%),
+    radial-gradient(1100px 600px at 90% 0%, rgba(155,232,255,.08), transparent 65%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  line-height:1.7;                      /* + lisible partout */
-  font-size: clamp(15px, 1.6vw, 17px);  /* taille fluide (mobile → desktop) */
+  line-height:1.7;                          /* confort de lecture */
+  font-size: clamp(15px, 1.55vw, 17px);     /* tailles fluides */
 }
 
 .wrap{ max-width:var(--wrap); margin:auto; padding:24px }
+
 a{ color:var(--accent); text-decoration:none }
 a:hover{ text-decoration:underline }
 
-/* Limite la longueur des paragraphes pour la lisibilité */
-.subtitle,
-.lead,
-.section .section-lead { max-width: 70ch }
+/* Limiter la longueur des paragraphes pour la lisibilité */
+.subtitle, .lead, .section .section-lead{ max-width:70ch }
 
-/* =========================
+/* Focus visible clavier */
+:focus-visible{
+  outline:2px solid color-mix(in oklab, var(--accent) 70%, transparent);
+  outline-offset:2px;
+  border-radius:8px;
+}
+
+/* =========================================
    Header / Nav
-========================= */
+========================================= */
 .site-header{
-  position:sticky; top:0; z-index:50;
-  backdrop-filter: blur(8px) saturate(120%);
-  background:linear-gradient(180deg, rgba(4,8,12,.75), rgba(4,8,12,.35));
+  position:sticky; top:0; z-index:40;
+  backdrop-filter: blur(10px) saturate(120%);
+  background:linear-gradient(180deg, rgba(10,14,20,.78), rgba(10,14,20,.42));
   border-bottom:1px solid var(--border);
 }
-.header-grid{ display:flex; align-items:center; justify-content:space-between; gap:18px }
-.brand h1{ margin:0; font-size: clamp(22px, 2.2vw, 26px); letter-spacing:.2px }
-.subtitle{ margin:6px 0 0; color:var(--muted); font-size: clamp(13px, 1.4vw, 14px) }
 
-/* Nav : sur mobile, on la rend défilable horizontalement (pas besoin de burger) */
+.header-grid{
+  display:flex; align-items:center; justify-content:space-between; gap:18px;
+}
+
+.brand h1{
+  margin:0;
+  font-size: clamp(22px, 2.2vw, 26px);
+  letter-spacing:.2px;
+}
+
+.subtitle{
+  margin:6px 0 0;
+  color:var(--muted);
+  font-size: clamp(13px, 1.4vw, 14px);
+}
+
+/* Nav : défilable en mobile, sans burger pour rester simple */
 .nav{
-  display:flex; gap:14px; overflow-x:auto; -webkit-overflow-scrolling:touch;
+  display:flex; gap:16px; overflow-x:auto; -webkit-overflow-scrolling:touch;
   scrollbar-width:none;
 }
 .nav::-webkit-scrollbar{ display:none }
-.nav a{ color:var(--muted); font-size:14px; white-space:nowrap; padding:8px 2px }
+.nav a{
+  color:var(--muted); font-size:14px; white-space:nowrap; padding:10px 2px;
+}
 .nav a:hover{ color:var(--text) }
 
-/* =========================
+/* =========================================
    Sections — séparation claire
-========================= */
+========================================= */
 .section{
-  padding: clamp(36px, 6vw, 60px) 0;  /* + d’espace sur mobile */
-  border-top: 1px solid var(--border);
-  position: relative;
+  padding: clamp(36px, 6vw, 64px) 0;
+  border-top:1px solid var(--border);
+  position:relative;
 }
 .section:not(:last-of-type)::after{
   content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background:var(--border);
 }
 .section--alt{
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent 60%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
 }
 .section h2{
   margin:0 0 16px;
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: clamp(18px, 2.1vw, 22px);
   letter-spacing:.2px;
 }
 
-/* =========================
+/* =========================================
    Hero
-========================= */
-.hero .hero-inner{ display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap }
-.lead-col{ flex:1 min(100%, 680px) }
-.lead-col h2{ margin:8px 0 6px; font-size: clamp(20px, 3.2vw, 28px); line-height:1.25 }
-.lead{ color:var(--muted); margin-top:8px }
-.cta{ margin-top:14px; display:flex; gap:10px; flex-wrap:wrap }
-.btn{
-  display:inline-block; min-height:44px; /* touch-friendly */
-  padding:12px 16px; border-radius:12px;
-  background:linear-gradient(90deg, var(--accent), var(--accent-2));
-  color:#04222e; font-weight:700; text-decoration:none; transition:.2s;
-  box-shadow:0 6px 18px rgba(90, 209, 255, .15);
+========================================= */
+.hero .hero-inner{
+  display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap;
 }
-.btn:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(90, 209, 255, .25) }
+
+.lead-col{ flex:1 min(100%, 700px) }
+
+.lead-col h2{
+  margin:8px 0 6px;
+  font-size: clamp(20px, 3.1vw, 28px);
+  line-height:1.25;
+}
+
+.lead{ color:var(--muted); margin-top:10px }
+
+.cta{ margin-top:16px; display:flex; gap:12px; flex-wrap:wrap }
+
+.btn{
+  display:inline-block;
+  min-height:46px;                 /* touch-friendly */
+  padding:12px 18px;
+  border-radius:12px;
+  background:linear-gradient(90deg, var(--accent), var(--accent-2));
+  color:#08222e;
+  font-weight:700;
+  text-decoration:none;
+  transition: transform .18s ease, box-shadow .22s ease, background .22s ease;
+  box-shadow:0 8px 22px rgba(97,218,251,.18);
+}
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(97,218,251,.28);
+}
 .btn.ghost{
   background:transparent; color:var(--text); border:1px solid var(--border);
   box-shadow:none;
@@ -145,24 +187,25 @@ a:hover{ text-decoration:underline }
   border-radius:var(--radius); padding:16px;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
 }
-.info-card h3{ margin:0 0 8px; font-size: clamp(16px, 1.9vw, 18px) }
+.info-card h3{ margin:0 0 10px; font-size: clamp(16px, 1.9vw, 18px) }
 .info-card ul{ margin:0; padding-left:18px; color:var(--muted) }
 
-/* =========================
+/* =========================================
    Projets — grille homogène & mobile-first
-========================= */
+========================================= */
 .projects-grid{
   display:grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: clamp(14px, 2.5vw, 20px);
+  gap: clamp(14px, 2.4vw, 22px);
 }
+
 .project-card{
   position:relative;
   background:var(--surface-2);
   border:1px solid var(--border);
   border-radius:var(--radius);
   padding:16px;
-  height: 260px;             /* desktop: hauteur uniforme */
+  height:260px;                        /* desktop : hauteur uniforme */
   overflow:hidden;
   transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
 }
@@ -172,39 +215,47 @@ a:hover{ text-decoration:underline }
   box-shadow:var(--shadow);
   z-index:2;
 }
-.project-card h3{ margin:0 0 10px; font-size: clamp(15px, 1.8vw, 16px) }
+.project-card h3{
+  margin:0 0 10px;
+  font-size: clamp(15px, 1.8vw, 16px);
+  letter-spacing:.15px;
+}
 .project-content{
-  color:var(--muted); font-size: clamp(14px, 1.6vw, 14.5px);
+  color:var(--text); opacity:.94;
+  font-size: clamp(14px, 1.55vw, 14.5px);
   height:150px; overflow:hidden; position:relative;
+  line-height:1.65;
 }
 .project-content::after{
-  content:""; position:absolute; bottom:0; left:0; right:0; height:42px;
-  background:linear-gradient(to top, rgba(8,16,23,.95), transparent);
+  content:""; position:absolute; bottom:0; left:0; right:0; height:44px;
+  background:linear-gradient(to top, rgba(10,13,18,.96), transparent);
   pointer-events:none;
 }
 .project-card:hover .project-content{ height:auto; max-height:none; overflow:visible }
 .project-card:hover .project-content::after{ display:none }
 .meta{ font-size:13px; color:var(--muted); margin-top:8px }
 
-/* Sur téléphone : on laisse la hauteur s’adapter et on enlève le fondu */
-@media (max-width: 700px){
-  .projects-grid{ grid-template-columns: 1fr } /* 1 colonne = lecture confortable */
+/* Sur téléphone : on s’adapte et on enlève le fondu */
+@media (max-width: 720px){
+  .projects-grid{ grid-template-columns: 1fr }
   .project-card{ height:auto }
   .project-content{ height:auto }
   .project-content::after{ display:none }
 }
 
-/* =========================
+/* =========================================
    Compétences (icônes)
-========================= */
+========================================= */
 #skills-icons .hint{
   color:var(--muted); margin:-6px 0 12px; font-size:14px
 }
+
 .icons-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill, minmax(var(--card-size), 1fr));
   gap:var(--gap);
 }
+
 .skill-card{
   position:relative;
   height:var(--card-size); width:var(--card-size);
@@ -219,7 +270,7 @@ a:hover{ text-decoration:underline }
   transform:translateY(-2px);
   border-color:var(--border-strong);
   box-shadow:0 12px 26px rgba(0,0,0,.35);
-  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
 }
 .skill-card img{
   width:var(--img-size); height:var(--img-size);
@@ -234,23 +285,24 @@ a:hover{ text-decoration:underline }
   pointer-events:none;
 }
 
-/* Tooltips (hover, focus, et tap mobile) */
+/* Tooltips (hover, focus, ET tap mobile) */
 .skill-card .tooltip{
   position:absolute; z-index:30; left:50%; bottom:calc(100% + 10px);
   transform:translateX(-50%); min-width:230px; max-width:280px;
-  padding:10px 12px; border-radius:10px; color:#e6eef6;
-  background:rgba(16,20,28,.96); border:1px solid rgba(255,255,255,.08);
+  padding:10px 12px; border-radius:10px; color:#e9f2fb;
+  background:rgba(15,20,28,.96); border:1px solid rgba(255,255,255,.09);
   box-shadow:0 16px 34px rgba(0,0,0,.45);
   opacity:0; pointer-events:none; transition:opacity .16s, transform .16s;
   backdrop-filter:saturate(120%) blur(6px);
 }
 .skill-card .tooltip::after{
   content:""; position:absolute; bottom:-8px; left:50%; transform:translateX(-50%);
-  border:8px solid transparent; border-top-color:rgba(16,20,28,.96);
+  border:8px solid transparent; border-top-color:rgba(15,20,28,.96);
   filter:drop-shadow(0 -1px 0 rgba(255,255,255,.08));
 }
 .skill-card:hover .tooltip,
 .skill-card:focus-visible .tooltip{ opacity:1; transform:translateX(-50%) translateY(-2px) }
+
 /* tap mobile (sans JS) */
 @media (hover:none){
   .skill-card:active .tooltip{ opacity:1; transform:translateX(-50%) translateY(-2px) }
@@ -262,21 +314,30 @@ a:hover{ text-decoration:underline }
 }
 .skill-card.extra:hover .dots{ color:var(--text) }
 
-/* =========================
+/* =========================================
    Contact & footer
-========================= */
+========================================= */
 .contact-list{ margin:0; padding-left:18px }
-.site-footer{ border-top:1px solid var(--border); padding:18px 0; color:var(--muted); text-align:center }
+.site-footer{
+  border-top:1px solid var(--border);
+  padding:18px 0; color:var(--muted); text-align:center
+}
 
-/* =========================
+/* =========================================
    Responsive structure
-========================= */
+========================================= */
 @media (max-width:980px){
   .hero .hero-inner{ flex-direction:column }
   .info-card{ width:100% }
 }
-
 @media (max-width:650px){
   .wrap{ padding:18px }
+  .nav{ gap:12px }
   :root{ --card-size:102px; --img-size:52px; --gap:12px }
 }
+
+/* =========================================
+   Micro-lisibilité (argenté + clair)
+========================================= */
+p, li{ color:var(--text); opacity:.95 }
+.lead, .subtitle, .meta, .hint{ opacity:.88 }
