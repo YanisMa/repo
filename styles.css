@@ -341,3 +341,109 @@ a:hover{ text-decoration:underline }
 ========================================= */
 p, li{ color:var(--text); opacity:.95 }
 .lead, .subtitle, .meta, .hint{ opacity:.88 }
+
+/* =========================================
+   Parcours (formation)
+========================================= */
+.parcours-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));
+  gap:clamp(14px, 2.4vw, 22px);
+}
+
+.parcours-item{
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+.parcours-item:hover{
+  transform:translateY(-2px);
+  border-color:var(--border-strong);
+  box-shadow:var(--shadow);
+}
+
+.parcours-date{
+  display:inline-block;
+  font-size:13px;
+  color:var(--accent);
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.parcours-item h3{
+  margin:0 0 4px;
+  font-size:clamp(15px, 1.8vw, 17px);
+}
+
+.parcours-school{
+  color:var(--muted);
+  font-size:14px;
+  margin:0 0 8px;
+  font-weight:500;
+}
+
+.parcours-item > p:last-child{
+  color:var(--muted);
+  font-size:14px;
+  margin:0;
+  line-height:1.6;
+}
+
+/* =========================================
+   Titres de catégorie (projets)
+========================================= */
+.category-title{
+  margin:32px 0 14px;
+  font-size:clamp(15px, 1.7vw, 17px);
+  color:var(--accent);
+  letter-spacing:.3px;
+  border-bottom:1px solid var(--border);
+  padding-bottom:8px;
+}
+.section > .category-title:first-of-type{
+  margin-top:8px;
+}
+
+/* =========================================
+   Tags de projets
+========================================= */
+.tag{
+  display:inline-block;
+  font-size:11px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  padding:3px 8px;
+  border-radius:6px;
+  margin-bottom:8px;
+}
+
+.tag-network{
+  background:rgba(59,130,246,.15);
+  color:#60a5fa;
+}
+.tag-security{
+  background:rgba(239,68,68,.15);
+  color:#f87171;
+}
+.tag-event{
+  background:rgba(168,85,247,.15);
+  color:#c084fc;
+}
+.tag-dev{
+  background:rgba(34,197,94,.15);
+  color:#4ade80;
+}
+
+@media (prefers-color-scheme: light){
+  .tag-network{ background:rgba(59,130,246,.12); color:#2563eb }
+  .tag-security{ background:rgba(239,68,68,.12); color:#dc2626 }
+  .tag-event{ background:rgba(168,85,247,.12); color:#9333ea }
+  .tag-dev{ background:rgba(34,197,94,.12); color:#16a34a }
+}
+
+@media (max-width:650px){
+  .parcours-grid{ grid-template-columns:1fr }
+}
