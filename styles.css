@@ -460,6 +460,8 @@ a:hover { color: var(--text); }
   border-radius: var(--radius);
   padding: 20px;
   height: 280px;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
 }
@@ -480,8 +482,6 @@ a:hover { color: var(--text); }
   transform: translateY(-6px);
   border-color: var(--border-accent);
   box-shadow: 0 0 30px var(--accent-glow), 0 20px 60px rgba(0,0,0,.4);
-  overflow: visible;
-  z-index: 5;
 }
 .project-card:hover::before { opacity: 1; }
 
@@ -489,35 +489,34 @@ a:hover { color: var(--text); }
   margin: 0 0 10px;
   font-size: clamp(14px, 1.7vw, 15.5px);
   letter-spacing: .15px;
-  position: relative;
+  flex-shrink: 0;
 }
 
 .project-content {
   color: var(--text);
   opacity: .92;
   font-size: clamp(13px, 1.5vw, 14px);
-  height: 150px;
-  overflow: hidden;
-  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
   line-height: 1.65;
+  padding-right: 4px;
+
+  /* Scrollbar fine — Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,229,255,.25) transparent;
 }
 
-.project-content::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 50px;
-  background: linear-gradient(to top, rgba(6,10,19,.95), transparent);
-  pointer-events: none;
-  transition: opacity .3s;
+/* Scrollbar fine — Webkit */
+.project-content::-webkit-scrollbar { width: 4px; }
+.project-content::-webkit-scrollbar-track { background: transparent; }
+.project-content::-webkit-scrollbar-thumb {
+  background: rgba(0,229,255,.25);
+  border-radius: 2px;
 }
-
-.project-card:hover .project-content {
-  height: auto;
-  max-height: none;
-  overflow: visible;
+.project-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,229,255,.45);
 }
-.project-card:hover .project-content::after { opacity: 0; }
 
 .meta {
   font-family: 'JetBrains Mono', monospace;
@@ -539,7 +538,7 @@ a:hover { color: var(--text); }
   padding: 3px 10px;
   border-radius: 6px;
   margin-bottom: 10px;
-  position: relative;
+  flex-shrink: 0;
 }
 
 .tag-network {
@@ -730,9 +729,8 @@ a:hover { color: var(--text); }
 
 @media (max-width: 720px) {
   .projects-grid { grid-template-columns: 1fr; }
-  .project-card { height: auto; overflow: visible; }
-  .project-content { height: auto; }
-  .project-content::after { display: none; }
+  .project-card { height: auto; }
+  .project-content { overflow-y: visible; }
 }
 
 @media (max-width: 650px) {
@@ -760,10 +758,6 @@ p, li { color: var(--text); opacity: .94; }
     background: linear-gradient(180deg, rgba(240,244,248,.9), rgba(240,244,248,.7));
   }
   .site-header::after { opacity: .3; }
-
-  .project-content::after {
-    background: linear-gradient(to top, rgba(240,244,248,.95), transparent);
-  }
 
   .project-card::before {
     background: linear-gradient(135deg, rgba(8,145,178,.03), rgba(124,58,237,.03));
