@@ -21,13 +21,17 @@
     const ctx = canvas.getContext('2d');
     let nodes = [];
     let W = 0, H = 0;
+    let LINK_DIST = 140;
     const mouse = { x: -9999, y: -9999 };
-    const LINK_DIST = 140;
 
     function resize() {
       W = canvas.width = window.innerWidth;
       H = canvas.height = window.innerHeight;
-      const count = Math.min(90, Math.floor((W * H) / 16000));
+      // moins de nœuds et de liens sur petit écran : le maillage reste lisible
+      // et la boucle de rendu (O(n²)) reste peu coûteuse sur mobile
+      LINK_DIST = W < 760 ? 105 : 140;
+      const density = W < 760 ? 22000 : 16000;
+      const count = Math.min(90, Math.floor((W * H) / density));
       nodes = Array.from({ length: count }, () => ({
         x: Math.random() * W,
         y: Math.random() * H,
