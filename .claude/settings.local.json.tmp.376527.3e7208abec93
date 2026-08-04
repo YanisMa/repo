@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config *)",
+      "mcp__playwright__browser_navigate",
+      "Bash(/home/rnc/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome --headless=new --no-sandbox --disable-gpu --window-size=1440,1000 --virtual-time-budget=8000 --screenshot=/tmp/claude-1000/-home-rnc-Bureau-repo/ef53e22b-9ff7-42a3-ba78-c4b909359d0b/scratchpad/hero.png file:///home/rnc/Bureau/repo/index.html)",
+      "Bash(/home/rnc/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome --headless=new --no-sandbox --disable-gpu --enable-logging=stderr --v=0 --virtual-time-budget=6000 --dump-dom file:///home/rnc/Bureau/repo/index.html)",
+      "Bash(/home/rnc/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome --headless=new --no-sandbox --disable-gpu --window-size=1440,1000 --virtual-time-budget=15000 --screenshot=/tmp/claude-1000/-home-rnc-Bureau-repo/ef53e22b-9ff7-42a3-ba78-c4b909359d0b/scratchpad/hero.png file:///home/rnc/Bureau/repo/index.html)",
+      "Bash(/home/rnc/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome --headless=new --no-sandbox --disable-gpu --window-size=1440,1200 --virtual-time-budget=15000 --screenshot=/tmp/claude-1000/-home-rnc-Bureau-repo/ef53e22b-9ff7-42a3-ba78-c4b909359d0b/scratchpad/honeypot.png 'file:///home/rnc/Bureau/repo/index.html#honeypot')",
+      "Bash(/home/rnc/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome --headless=new --no-sandbox --disable-gpu --window-size=1440,4400 --virtual-time-budget=15000 --screenshot=/tmp/claude-1000/-home-rnc-Bureau-repo/ef53e22b-9ff7-42a3-ba78-c4b909359d0b/scratchpad/full.png file:///home/rnc/Bureau/repo/index.html)",
+      "Bash(/home/rnc/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome --headless=new --no-sandbox --disable-gpu --window-size=390,1600 --virtual-time-budget=15000 --screenshot=/tmp/claude-1000/-home-rnc-Bureau-repo/ef53e22b-9ff7-42a3-ba78-c4b909359d0b/scratchpad/mobile.png file:///home/rnc/Bureau/repo/index.html)",
+      "Bash(git commit -m 'Refonte visuelle thème pentest : fond réseau animé, terminal, tilt 3D, passage en M2' -m 'Nouveau design cyber/network ops : canvas de particules réseau, terminal *)",
+      "Bash(gh auth *)",
+      "Read(//home/rnc/.ssh/**)",
+      "Bash(ssh -o BatchMode=yes -T git@github.com)",
+      "Bash(git commit -m 'Bandes de fond alternées, refonte mobile et calibrage de la fiche honeypot' -m 'Chaque section a désormais son propre fond : bande claire pour la *)",
+      "Bash(git commit -q -m 'Mise en avant du scanner TCP SYN et ajout d'\\\\''un auditeur SMTP \\(hacking éthique\\)' -m 'Le scanner TCP SYN en C++ passe en tête de la section Réseaux & *)"
+    ]
+  }
+}

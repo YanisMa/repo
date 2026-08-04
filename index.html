@@ -104,7 +104,7 @@
                 <span class="stat-label">pts Root-Me</span>
               </div>
               <div class="stat">
-                <span class="stat-num" data-count="13">0</span>
+                <span class="stat-num" data-count="14">0</span>
                 <span class="stat-label">projets &amp;<br>réalisations</span>
               </div>
               <div class="stat">
@@ -162,6 +162,28 @@
         <div class="projects-grid">
 
           <article class="project-card tilt reveal">
+            <span class="tag tag-security">Outil offensif — C++</span>
+            <h3>Scanner TCP SYN haute performance</h3>
+            <div class="project-content">
+              <p>Scanner de ports écrit intégralement en C++, en <em>raw sockets</em>, pour cartographier les services exposés sur de grands sous-réseaux lors d'une phase de reconnaissance. Envoi de paquets SYN et analyse des réponses (SYN/ACK, RST) sans établir la connexion complète — un balayage rapide et discret.</p>
+              <p>Parallélisation massive des envois via un pool de threads, contrôle de débit paramétrable pour ne pas saturer le réseau cible, et fingerprinting des services à partir des bannières et des ports ouverts. Les résultats sont exportés en CSV pour l'analyse post-scan : croisement avec d'autres sorties, priorisation des cibles, reporting.</p>
+              <p>L'idée directrice : produire de l'outillage réutilisable par une équipe, qui transforme une sortie brute en information exploitable — pas un one-shot jetable.</p>
+              <p class="meta"><strong>Tech :</strong> C++, raw sockets, multithreading, TCP/IP, fingerprinting, export CSV</p>
+            </div>
+          </article>
+
+          <article class="project-card tilt reveal">
+            <span class="tag tag-security">Audit — Hacking éthique</span>
+            <h3>Auditeur de configuration SMTP</h3>
+            <div class="project-content">
+              <p>Outil d'audit défensif, exécuté uniquement sur des serveurs de mon périmètre ou avec autorisation explicite, pour détecter les faiblesses classiques d'un service SMTP avant qu'un attaquant ne les exploite.</p>
+              <p>Le script identifie les serveurs de messagerie mal durcis : relais ouverts (<em>open relay</em>) acceptant de router du courrier pour des tiers, absence de chiffrement TLS (<code>STARTTLS</code>), authentification acceptée en clair, ou politiques d'identifiants trop faibles. Chaque test s'appuie sur les commandes du protocole (<code>EHLO</code>, <code>MAIL FROM</code>, <code>RCPT TO</code>) et s'arrête au constat — jamais d'exploitation réelle.</p>
+              <p>En sortie : un rapport listant, par hôte, les vérifications échouées et des recommandations de durcissement. Une démarche <em>blue team</em> nourrie par une compréhension offensive.</p>
+              <p class="meta"><strong>Tech :</strong> Python, SMTP, TLS/STARTTLS, reporting · usage autorisé uniquement</p>
+            </div>
+          </article>
+
+          <article class="project-card tilt reveal">
             <span class="tag tag-network">Réseaux</span>
             <h3>Infrastructure réseau d'entreprise simulée</h3>
             <div class="project-content">
@@ -185,15 +207,6 @@
             <div class="project-content">
               <p>Participation aux qualifications du HackDay organisé par l'ESIEE Paris. Résolution de challenges de type Capture The Flag (CTF) en équipe : épreuves de sécurité web, analyse réseau, stéganographie et reverse engineering dans un temps imparti.</p>
               <p class="meta"><strong>Format :</strong> CTF en équipe, qualifications en ligne</p>
-            </div>
-          </article>
-
-          <article class="project-card tilt reveal">
-            <span class="tag tag-security">Outil réseau</span>
-            <h3>Scanner TCP SYN — C++</h3>
-            <div class="project-content">
-              <p>Scanner TCP SYN haute performance en C++ pour cartographier les services actifs sur de grands sous-réseaux. Parallélisation des envois, fingerprinting de services, contrôle de débit et export CSV pour l'analyse post-scan.</p>
-              <p class="meta"><strong>Tech :</strong> C++, raw sockets, multithreading</p>
             </div>
           </article>
 
