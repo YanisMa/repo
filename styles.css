@@ -1,5 +1,5 @@
 /* =========================================
-   PORTFOLIO — Pentest / Network Ops theme
+   PORTFOLIO - Pentest / Network Ops theme
    Bandes alternées clair / sombre / noir,
    fond réseau canvas, terminal, tilt 3D
 ========================================= */
@@ -109,7 +109,7 @@ img { max-width: 100%; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(0, 229, 255, .4); }
 
 /* =========================================
-   BANDES — chaque section a son propre fond
+   BANDES - chaque section a son propre fond
 ========================================= */
 .band {
   position: relative;
@@ -127,17 +127,17 @@ img { max-width: 100%; }
   z-index: 1;
 }
 
-/* ——— Bande sombre : transparente, le réseau animé reste visible ——— */
+/* --- Bande sombre : transparente, le réseau animé reste visible --- */
 .band-deep { background: transparent; }
 
-/* ——— Bande noire (projets) : voile presque opaque ——— */
+/* --- Bande noire (projets) : voile presque opaque --- */
 .band-black {
   background: linear-gradient(180deg, rgba(0, 0, 0, .68), rgba(0, 0, 0, .78));
   --surface-2: linear-gradient(180deg, rgba(20, 30, 54, .85), rgba(10, 16, 32, .7));
   --border: rgba(148, 190, 255, .12);
 }
 
-/* ——— Bande claire (présentation, compétences) ——— */
+/* --- Bande claire (présentation, compétences) --- */
 .band-paper {
   --text: #0d1626;
   --muted: #4d5f79;
@@ -473,7 +473,7 @@ img { max-width: 100%; }
 }
 
 /* =========================================
-   Terminal — toujours sombre, quelle que soit la bande
+   Terminal - toujours sombre, quelle que soit la bande
 ========================================= */
 .terminal {
   --text: #e2e8f3;
@@ -639,7 +639,7 @@ img { max-width: 100%; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px;
-  height: 285px;
+  height: 340px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -786,7 +786,7 @@ img { max-width: 100%; }
   pointer-events: none;
 }
 
-/* Tooltips — toujours sombres */
+/* Tooltips - toujours sombres */
 .skill-card .tooltip {
   --text: #e6ecf6;
   --muted: #a3b4ca;
@@ -898,7 +898,9 @@ img { max-width: 100%; }
 /* =========================================
    Révélation au scroll
 ========================================= */
-.reveal {
+/* masqué au départ seulement si le JS tourne, sinon le contenu
+   resterait invisible en cas d'échec de chargement du script */
+.js .reveal {
   opacity: 0;
   transform: translateY(26px);
   transition: opacity .7s ease, transform .7s cubic-bezier(.22, .61, .36, 1);
@@ -916,7 +918,7 @@ img { max-width: 100%; }
 }
 
 /* =========================================
-   Responsive — tablette
+   Responsive - tablette
 ========================================= */
 @media (max-width: 980px) {
   .hero .hero-inner { flex-direction: column; gap: 26px; }
@@ -925,14 +927,13 @@ img { max-width: 100%; }
 }
 
 /* =========================================
-   Responsive — mobile
+   Responsive - mobile
 ========================================= */
-@media (max-width: 760px) {
+/* le menu complet ne tient plus à côté du nom : on passe sur deux lignes,
+   identité puis navigation, avant que les liens ne se fassent rogner */
+@media (max-width: 900px) {
   html { scroll-padding-top: 128px; }
 
-  .wrap { padding: 20px; }
-
-  /* header sur deux lignes : identité puis navigation */
   .header-grid {
     flex-direction: column;
     align-items: stretch;
@@ -945,11 +946,15 @@ img { max-width: 100%; }
     width: 100%;
     gap: 16px;
     padding-bottom: 2px;
-    -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent);
-    mask-image: linear-gradient(90deg, #000 88%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, #000 92%, transparent);
   }
   .nav a { padding: 8px 0 10px; font-size: 13px; }
   .nav a::after { bottom: 4px; }
+}
+
+@media (max-width: 760px) {
+  .wrap { padding: 20px; }
 
   .hero { padding-top: 32px; }
   .lead-col h2 { font-size: 27px; }
@@ -990,6 +995,17 @@ img { max-width: 100%; }
       repeating-linear-gradient(0deg, rgba(13, 22, 38, .04) 0 1px, transparent 1px 26px),
       repeating-linear-gradient(90deg, rgba(13, 22, 38, .04) 0 1px, transparent 1px 26px);
   }
+}
+
+@media (max-width: 480px) {
+  /* les libellés de commande sont plus larges que la moitié de l'écran ;
+     flex remis à auto sinon le flex-basis devient une hauteur en colonne */
+  .cta { flex-direction: column; }
+  .cta .btn { flex: 0 0 auto; width: 100%; }
+
+  /* sans les numéros, les quatre liens tiennent sans défilement */
+  .nav a span { display: none; }
+  .nav { gap: 14px; }
 }
 
 @media (max-width: 560px) {

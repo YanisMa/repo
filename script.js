@@ -1,5 +1,5 @@
 /* =========================================
-   PORTFOLIO — interactions
+   PORTFOLIO - interactions
    1. Fond réseau animé (canvas)
    2. Terminal auto-typé (hero)
    3. Tilt 3D des cartes
@@ -14,7 +14,7 @@
   const isTouch = window.matchMedia('(hover: none)').matches;
 
   /* =========================================
-     1. Fond réseau animé — nœuds + liens
+     1. Fond réseau animé - nœuds + liens
   ========================================= */
   const canvas = document.getElementById('net-canvas');
   if (canvas && !reducedMotion) {
@@ -103,7 +103,7 @@
   ========================================= */
   const term = document.getElementById('terminal-body');
   if (term) {
-    // type: 'cmd' → tapé caractère par caractère, 'out' → affiché d'un bloc
+    // type: 'cmd' -> tapé caractère par caractère, 'out' -> affiché d'un bloc
     const SCRIPT = [
       { t: 'cmd', text: 'nmap -sS -sV 10.10.20.0/24' },
       { t: 'out', text: 'Nmap scan report for 10.10.20.14', cls: 'dim' },
@@ -115,7 +115,7 @@
       { t: 'cmd', text: 'python3 parse_scan.py --xml scan.xml' },
       { t: 'out', text: '[+] 254 hôtes analysés .......... OK', cls: 'ok' },
       { t: 'out', text: '[+] 37 services identifiés ...... OK', cls: 'ok' },
-      { t: 'out', text: '[+] export → rapport.html', cls: 'ok' }
+      { t: 'out', text: '[+] export -> rapport.html', cls: 'ok' }
     ];
     const PROMPT = '<span class="t-prompt">[yanis@lab ~]$ </span>';
 

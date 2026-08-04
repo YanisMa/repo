@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Yanis — M2 Réseaux & Sécurité | Sorbonne Université</title>
+  <title>Yanis - M2 Réseaux & Sécurité | Sorbonne Université</title>
   <meta name="description" content="Portfolio de Yanis, étudiant en M2 Réseaux et Sécurité à Sorbonne Université. Sécurité offensive (Root-Me 3080 pts), pentest, CTF (qualifications HackDay ESIEE), architecture réseau, automatisation Python et administration système Linux." />
   <meta name="keywords" content="cybersécurité, réseaux, M2 Réseaux et Sécurité, Sorbonne Université, pentest, test d'intrusion, sécurité offensive, automatisation Python, Root-Me, architecture réseau, CTF, HackDay ESIEE, infrastructure réseau, administration système, Linux, audit sécurité, VLAN, OSPF, routage, commutation, Nmap, Burp Suite" />
   <meta name="author" content="Yanis" />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Yanis — M2 Réseaux & Sécurité | Sorbonne Université" />
+  <meta property="og:title" content="Yanis - M2 Réseaux & Sécurité | Sorbonne Université" />
   <meta property="og:description" content="Sécurité offensive & automatisation : pentest, CTF, architecture réseau et outillage Python. Étudiant en M2 Réseaux et Sécurité à Sorbonne Université." />
   <meta property="og:type" content="website" />
   <meta name="color-scheme" content="dark light" />
@@ -18,6 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -74,7 +75,7 @@
     <div class="wrap header-grid">
       <div class="brand">
         <h1><span class="prompt-sign">~$</span> Yanis<span class="caret">▊</span></h1>
-        <p class="subtitle">M2 Réseaux &amp; Sécurité — Sorbonne Université</p>
+        <p class="subtitle">M2 Réseaux &amp; Sécurité - Sorbonne Université</p>
       </div>
       <nav class="nav" aria-label="Navigation principale">
         <a href="#parcours"><span aria-hidden="true">01.</span> Parcours</a>
@@ -86,7 +87,7 @@
   </header>
 
   <main>
-    <!-- ===== HERO — bande claire ===== -->
+    <!-- ===== HERO - bande claire ===== -->
     <section class="band band-paper" id="hero">
       <div class="wrap hero">
         <div class="hero-inner">
@@ -125,25 +126,25 @@
       </div>
     </section>
 
-    <!-- ===== PARCOURS — bande sombre ===== -->
+    <!-- ===== PARCOURS - bande sombre ===== -->
     <section class="band band-deep" id="parcours">
       <div class="wrap section">
         <h2><span class="sec-num">01.</span> Parcours</h2>
         <div class="parcours-grid">
           <article class="parcours-item tilt reveal">
-            <span class="parcours-date">2026 — En cours</span>
+            <span class="parcours-date">2026 - En cours</span>
             <h3>M2 Réseaux et Sécurité</h3>
             <p class="parcours-school">Sorbonne Université, Paris</p>
             <p>Sécurité des réseaux et des systèmes d'information, sécurité offensive, architecture d'infrastructures sécurisées, supervision et administration système avancée.</p>
           </article>
           <article class="parcours-item tilt reveal">
-            <span class="parcours-date">2025 — 2026</span>
+            <span class="parcours-date">2025 - 2026</span>
             <h3>M1 Réseaux et Sécurité</h3>
             <p class="parcours-school">Sorbonne Université, Paris</p>
             <p>Architecture et protocoles réseau, routage et commutation, programmation réseau, administration Linux et fondements de la sécurité.</p>
           </article>
           <article class="parcours-item tilt reveal">
-            <span class="parcours-date">2022 — 2025</span>
+            <span class="parcours-date">2022 - 2025</span>
             <h3>Licence Informatique</h3>
             <p class="parcours-school">Université Gustave Eiffel</p>
             <p>Algorithmique, programmation système, bases de données, compilation et développement logiciel.</p>
@@ -152,34 +153,33 @@
       </div>
     </section>
 
-    <!-- ===== PROJETS — bande noire ===== -->
+    <!-- ===== PROJETS - bande noire ===== -->
     <section class="band band-black" id="projects">
       <div class="wrap section">
         <h2><span class="sec-num">02.</span> Projets &amp; réalisations</h2>
 
-        <!-- ——— Réseaux & Cybersécurité ——— -->
+        <!-- --- Réseaux & Cybersécurité --- -->
         <h3 class="category-title">Réseaux &amp; Cybersécurité</h3>
         <div class="projects-grid">
 
           <article class="project-card tilt reveal">
-            <span class="tag tag-security">Outil offensif — C++</span>
+            <span class="tag tag-security">Outil offensif - C++</span>
             <h3>Scanner TCP SYN haute performance</h3>
             <div class="project-content">
-              <p>Scanner de ports écrit intégralement en C++, en <em>raw sockets</em>, pour cartographier les services exposés sur de grands sous-réseaux lors d'une phase de reconnaissance. Envoi de paquets SYN et analyse des réponses (SYN/ACK, RST) sans établir la connexion complète — un balayage rapide et discret.</p>
-              <p>Parallélisation massive des envois via un pool de threads, contrôle de débit paramétrable pour ne pas saturer le réseau cible, et fingerprinting des services à partir des bannières et des ports ouverts. Les résultats sont exportés en CSV pour l'analyse post-scan : croisement avec d'autres sorties, priorisation des cibles, reporting.</p>
-              <p>L'idée directrice : produire de l'outillage réutilisable par une équipe, qui transforme une sortie brute en information exploitable — pas un one-shot jetable.</p>
+              <p>Scanner de ports écrit intégralement en C++, en <em>raw sockets</em>, pour cartographier les services exposés sur de grands sous-réseaux pendant une phase de reconnaissance. Envoi de paquets SYN et analyse des réponses (SYN/ACK, RST) sans établir la connexion complète : un balayage rapide et discret.</p>
+              <p>Parallélisation des envois via un pool de threads, contrôle de débit paramétrable pour ne pas saturer la cible, fingerprinting des services à partir des bannières et des ports ouverts. Résultats exportés en CSV pour l'analyse post-scan : croisement avec d'autres sorties, priorisation des cibles, reporting. Écrit pour resservir, pas pour rester dans mon terminal.</p>
               <p class="meta"><strong>Tech :</strong> C++, raw sockets, multithreading, TCP/IP, fingerprinting, export CSV</p>
             </div>
           </article>
 
           <article class="project-card tilt reveal">
-            <span class="tag tag-security">Audit — Hacking éthique</span>
+            <span class="tag tag-security">Audit - Hacking éthique</span>
             <h3>Auditeur de configuration SMTP</h3>
             <div class="project-content">
               <p>Outil d'audit défensif, exécuté uniquement sur des serveurs de mon périmètre ou avec autorisation explicite, pour détecter les faiblesses classiques d'un service SMTP avant qu'un attaquant ne les exploite.</p>
-              <p>Le script identifie les serveurs de messagerie mal durcis : relais ouverts (<em>open relay</em>) acceptant de router du courrier pour des tiers, absence de chiffrement TLS (<code>STARTTLS</code>), authentification acceptée en clair, ou politiques d'identifiants trop faibles. Chaque test s'appuie sur les commandes du protocole (<code>EHLO</code>, <code>MAIL FROM</code>, <code>RCPT TO</code>) et s'arrête au constat — jamais d'exploitation réelle.</p>
-              <p>En sortie : un rapport listant, par hôte, les vérifications échouées et des recommandations de durcissement. Une démarche <em>blue team</em> nourrie par une compréhension offensive.</p>
-              <p class="meta"><strong>Tech :</strong> Python, SMTP, TLS/STARTTLS, reporting · usage autorisé uniquement</p>
+              <p>Le script identifie les serveurs de messagerie mal durcis : relais ouverts (<em>open relay</em>) acceptant de router du courrier pour des tiers, absence de chiffrement TLS (<code>STARTTLS</code>), authentification acceptée en clair, ou politiques d'identifiants trop faibles. Chaque test s'appuie sur les commandes du protocole (<code>EHLO</code>, <code>MAIL FROM</code>, <code>RCPT TO</code>) et s'arrête au constat - jamais d'exploitation réelle.</p>
+              <p>En sortie : un rapport listant, par hôte, les vérifications échouées et les correctifs de configuration à appliquer.</p>
+              <p class="meta"><strong>Tech :</strong> Python, SMTP, TLS/STARTTLS, reporting (usage sur périmètre autorisé uniquement)</p>
             </div>
           </article>
 
@@ -194,7 +194,7 @@
 
           <article class="project-card tilt reveal">
             <span class="tag tag-security">Sécurité offensive</span>
-            <h3>Root-Me — Challenges de sécurité (3080 pts)</h3>
+            <h3>Root-Me - Challenges de sécurité (3080 pts)</h3>
             <div class="project-content">
               <p>Pratique régulière de challenges de sécurité offensive sur Root-Me. Résolution d'épreuves en exploitation web (injections SQL, XSS, SSRF), analyse réseau (capture de trames, protocoles), cryptanalyse, forensic et exploitation système. Score actuel : 3080 points.</p>
               <p class="meta"><strong>Catégories :</strong> Web, réseau, cryptanalyse, forensic, système</p>
@@ -203,7 +203,7 @@
 
           <article class="project-card tilt reveal">
             <span class="tag tag-event">Compétition CTF</span>
-            <h3>HackDay ESIEE Paris — Qualifications</h3>
+            <h3>HackDay ESIEE Paris - Qualifications</h3>
             <div class="project-content">
               <p>Participation aux qualifications du HackDay organisé par l'ESIEE Paris. Résolution de challenges de type Capture The Flag (CTF) en équipe : épreuves de sécurité web, analyse réseau, stéganographie et reverse engineering dans un temps imparti.</p>
               <p class="meta"><strong>Format :</strong> CTF en équipe, qualifications en ligne</p>
@@ -212,40 +212,40 @@
 
           <article class="project-card tilt reveal">
             <span class="tag tag-lab">Expérimentation</span>
-            <h3>Honeypot — premiers pas</h3>
+            <h3>Honeypot - premiers pas</h3>
             <div class="project-content">
-              <p>Petite expérimentation personnelle : mise en place d'un honeypot pour observer les tentatives de connexion automatisées, puis lecture des logs produits et parsing en Python pour regrouper les adresses sources et les identifiants testés. Un exercice court, à échelle réduite, qui m'a surtout servi à comprendre à quoi ressemble le bruit de fond d'Internet.</p>
+              <p>Petite expérimentation personnelle : mise en place d'un honeypot pour observer les tentatives de connexion automatisées, puis lecture des logs produits et parsing en Python pour regrouper les adresses sources et les identifiants testés. Un exercice court, à petite échelle, qui m'a surtout montré le volume de scans automatisés qui tournent en permanence.</p>
               <p class="meta"><strong>Tech :</strong> Python, lecture de logs</p>
             </div>
           </article>
 
         </div>
 
-        <!-- ——— Développement & Systèmes ——— -->
+        <!-- --- Développement & Systèmes --- -->
         <h3 class="category-title">Développement &amp; Systèmes</h3>
         <div class="projects-grid">
 
           <article class="project-card tilt reveal">
             <span class="tag tag-dev">Compilation</span>
-            <h3>Analyseur &amp; compilateur ASM — tpc</h3>
+            <h3>Analyseur &amp; compilateur ASM - tpc</h3>
             <div class="project-content">
-              <p><strong>Nov. 2024 – Janv. 2025 · Université Gustave Eiffel</strong> — En binôme : compilateur complet pour <em>tpc</em> (sous-ensemble de C). Lexer/parser (Flex/Bison), construction d'AST, détection d'erreurs sémantiques et génération de code assembleur x86.</p>
+              <p><strong>Nov. 2024 - Janv. 2025, Université Gustave Eiffel</strong> - En binôme : compilateur complet pour <em>tpc</em> (sous-ensemble de C). Lexer/parser (Flex/Bison), construction d'AST, détection d'erreurs sémantiques et génération de code assembleur x86.</p>
               <p class="meta"><strong>Tech :</strong> Flex, Bison, C, assembleur x86</p>
             </div>
           </article>
 
           <article class="project-card tilt reveal">
             <span class="tag tag-dev">Algorithmique</span>
-            <h3>Compression d'images — QuadTree</h3>
+            <h3>Compression d'images - QuadTree</h3>
             <div class="project-content">
-              <p><strong>Oct. 2024 – Janv. 2025 · Université Gustave Eiffel</strong> — Compression d'images en niveaux de gris via structure QuadTree. Encodeur/décodeur au format <code>.qtc</code>, bibliothèque C partagée optimisée sous Linux.</p>
+              <p><strong>Oct. 2024 - Janv. 2025, Université Gustave Eiffel</strong> - Compression d'images en niveaux de gris via structure QuadTree. Encodeur/décodeur au format <code>.qtc</code>, bibliothèque C partagée optimisée sous Linux.</p>
               <p class="meta"><strong>Tech :</strong> C, QuadTree, formats binaires, Linux</p>
             </div>
           </article>
 
           <article class="project-card tilt reveal">
             <span class="tag tag-dev">Web</span>
-            <h3>Application web &amp; BDD — Flask / PostgreSQL</h3>
+            <h3>Application web &amp; BDD - Flask / PostgreSQL</h3>
             <div class="project-content">
               <p>Application de gestion de commandes (Fleuropa). Conception du schéma relationnel, authentification sécurisée, suivi des commandes en temps réel et module de paiement.</p>
               <p class="meta"><strong>Tech :</strong> Python, Flask, PostgreSQL, HTML/CSS</p>
@@ -254,7 +254,7 @@
 
           <article class="project-card tilt reveal">
             <span class="tag tag-dev">Jeu</span>
-            <h3>Jeu stratégique type Cascadia — Java</h3>
+            <h3>Jeu stratégique type Cascadia - Java</h3>
             <div class="project-content">
               <p>Jeu de placement de tuiles inspiré de Cascadia. Architecture modulaire, mode solo contre l'IA et logique de scoring paramétrable.</p>
               <p class="meta"><strong>Tech :</strong> Java 23</p>
@@ -263,7 +263,7 @@
 
           <article class="project-card tilt reveal">
             <span class="tag tag-dev">Simulation</span>
-            <h3>Abeilles vs Frelons — C</h3>
+            <h3>Abeilles vs Frelons - C</h3>
             <div class="project-content">
               <p>Simulation d'écosystème sur grille : structures chaînées (doublement/simplement/circulaire), cycles de récolte et combat, interface graphique libMLV et sauvegarde.</p>
               <p class="meta"><strong>Tech :</strong> C, structures de données, libMLV</p>
@@ -272,7 +272,7 @@
 
           <article class="project-card tilt reveal">
             <span class="tag tag-dev">Algorithmique</span>
-            <h3>Enveloppe convexe — C</h3>
+            <h3>Enveloppe convexe - C</h3>
             <div class="project-content">
               <p>Implémentation de l'algorithme de Jarvis pour calculer l'enveloppe convexe d'un ensemble de points 2D. Optimisation des structures chaînées et visualisation graphique.</p>
               <p class="meta"><strong>Tech :</strong> C, algorithmique géométrique</p>
@@ -281,7 +281,7 @@
 
           <article class="project-card tilt reveal">
             <span class="tag tag-dev">Jeu</span>
-            <h3>Ricocheep — Python</h3>
+            <h3>Ricocheep - Python</h3>
             <div class="project-content">
               <p>Jeu graphique en Python utilisant divers algorithmes de tri pour le scoring et les animations de gameplay.</p>
               <p class="meta"><strong>Tech :</strong> Python, algorithmes de tri</p>
@@ -301,7 +301,7 @@
       </div>
     </section>
 
-    <!-- ===== COMPÉTENCES — bande claire ===== -->
+    <!-- ===== COMPÉTENCES - bande claire ===== -->
     <section class="band band-paper" id="skills-icons">
       <div class="wrap section">
         <h2><span class="sec-num">03.</span> Compétences</h2>
@@ -310,7 +310,7 @@
           <div class="skill-card tilt reveal" tabindex="0">
             <img src="images/icons8-burp-suite-50.png" alt="Burp Suite" loading="lazy">
             <span class="badge">Burp Suite</span>
-            <div class="tooltip"><strong>Burp Suite</strong><p>Proxy, repeater, intruder, scanner — audit de sécurité d'applications web.</p></div>
+            <div class="tooltip"><strong>Burp Suite</strong><p>Proxy, repeater, intruder, scanner - audit de sécurité d'applications web.</p></div>
           </div>
 
           <div class="skill-card tilt reveal" tabindex="0">
@@ -385,7 +385,7 @@
             <span class="badge">Autres</span>
             <div class="tooltip">
               <strong>Autres outils &amp; technologies</strong>
-              <p>iptables • Flex / Bison • Bash • Docker • Git • HTML / CSS • Flask • Makefile • Jira • PostgreSQL</p>
+              <p>iptables, Flex/Bison, Bash, Docker, Git, HTML/CSS, Flask, Makefile, Jira, PostgreSQL</p>
             </div>
           </div>
 
@@ -393,7 +393,7 @@
       </div>
     </section>
 
-    <!-- ===== CONTACT — bande sombre ===== -->
+    <!-- ===== CONTACT - bande sombre ===== -->
     <section class="band band-deep" id="contact">
       <div class="wrap section">
         <h2><span class="sec-num">04.</span> Contact</h2>
@@ -418,7 +418,7 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <p><span class="prompt-sign">~$</span> exit — © 2026 Yanis — Portfolio</p>
+      <p><span class="prompt-sign">~$</span> exit - © 2026 Yanis - Portfolio</p>
     </div>
   </footer>
 
