@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Yanis — Master Réseaux & Cybersécurité | Sorbonne Université</title>
-  <meta name="description" content="Portfolio de Yanis, étudiant en Master Réseaux et Cybersécurité à Sorbonne Université. Architecture réseau d'entreprise, sécurité offensive (Root-Me 3080 pts), pentest, CTF, administration système Linux et projets de développement." />
-  <meta name="keywords" content="cybersécurité, réseaux, Master Sorbonne Université, pentest, test d'intrusion, sécurité offensive, Root-Me, architecture réseau, CTF, HackDay, infrastructure réseau, administration système, Linux, audit sécurité, VLAN, OSPF, routage, commutation" />
+  <title>Yanis — M2 Réseaux & Sécurité | Sorbonne Université</title>
+  <meta name="description" content="Portfolio de Yanis, étudiant en M2 Réseaux et Sécurité à Sorbonne Université. Sécurité offensive (Root-Me 3080 pts), pentest, CTF (qualifications HackDay ESIEE), architecture réseau, automatisation Python et administration système Linux." />
+  <meta name="keywords" content="cybersécurité, réseaux, M2 Réseaux et Sécurité, Sorbonne Université, pentest, test d'intrusion, sécurité offensive, automatisation Python, Root-Me, architecture réseau, CTF, HackDay ESIEE, infrastructure réseau, administration système, Linux, audit sécurité, VLAN, OSPF, routage, commutation, Nmap, Burp Suite" />
   <meta name="author" content="Yanis" />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Yanis — Master Réseaux & Cybersécurité | Sorbonne Université" />
-  <meta property="og:description" content="Architecture réseau, sécurité offensive, pentest et projets de développement. Étudiant en Master Réseaux et Cybersécurité à Sorbonne Université." />
+  <meta property="og:title" content="Yanis — M2 Réseaux & Sécurité | Sorbonne Université" />
+  <meta property="og:description" content="Sécurité offensive & automatisation : pentest, CTF, architecture réseau et outillage Python. Étudiant en M2 Réseaux et Sécurité à Sorbonne Université." />
   <meta property="og:type" content="website" />
-  <meta name="color-scheme" content="dark light" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23060a13'/%3E%3Ctext x='10' y='42' font-family='monospace' font-size='30' fill='%2300e5ff'%3E%26gt;_%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,13 +24,13 @@
     "mainEntity": {
       "@type": "Person",
       "name": "Yanis",
-      "jobTitle": "Étudiant en Master Réseaux et Cybersécurité",
-      "description": "Étudiant en Master Réseaux et Cybersécurité à Sorbonne Université, spécialisé en architecture réseau, sécurité offensive, pentest et administration système Linux.",
+      "jobTitle": "Étudiant en M2 Réseaux et Sécurité",
+      "description": "Étudiant en M2 Réseaux et Sécurité à Sorbonne Université, spécialisé en sécurité offensive, pentest, automatisation Python, architecture réseau et administration système Linux.",
       "alumniOf": [
         {
           "@type": "EducationalOrganization",
           "name": "Sorbonne Université",
-          "department": "Réseaux et Cybersécurité"
+          "department": "Réseaux et Sécurité"
         },
         {
           "@type": "EducationalOrganization",
@@ -38,15 +39,19 @@
         }
       ],
       "knowsAbout": [
+        "Sécurité offensive",
+        "Pentest",
+        "Automatisation Python",
+        "Analyse de logs",
         "Architecture réseau",
         "Cybersécurité",
         "Sécurité des systèmes d'information",
-        "Pentest",
-        "Sécurité offensive",
         "Administration système Linux",
         "Infrastructure réseau",
         "Routage et commutation",
         "CTF",
+        "Nmap",
+        "Burp Suite",
         "C/C++",
         "Python"
       ],
@@ -59,18 +64,22 @@
   </script>
 </head>
 <body>
+  <!-- Fond réseau animé -->
+  <canvas id="net-canvas" aria-hidden="true"></canvas>
+  <div class="scanlines" aria-hidden="true"></div>
+
   <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="wrap header-grid">
       <div class="brand">
-        <h1>Yanis</h1>
-        <p class="subtitle">Master Réseaux & Cybersécurité — Sorbonne Université</p>
+        <h1><span class="prompt-sign">~$</span> Yanis<span class="caret">▊</span></h1>
+        <p class="subtitle">M2 Réseaux & Sécurité — Sorbonne Université</p>
       </div>
       <nav class="nav" aria-label="Navigation principale">
-        <a href="#parcours">Parcours</a>
-        <a href="#projects">Projets</a>
-        <a href="#skills-icons">Compétences</a>
-        <a href="#contact">Contact</a>
+        <a href="#parcours"><span aria-hidden="true">01.</span> Parcours</a>
+        <a href="#projects"><span aria-hidden="true">02.</span> Projets</a>
+        <a href="#skills-icons"><span aria-hidden="true">03.</span> Compétences</a>
+        <a href="#contact"><span aria-hidden="true">04.</span> Contact</a>
       </nav>
     </div>
   </header>
@@ -79,38 +88,57 @@
     <!-- ===== HERO ===== -->
     <section id="hero" class="hero wrap">
       <div class="hero-inner">
-        <div class="lead-col">
-          <h2>Architecture réseau, sécurité offensive & ingénierie système</h2>
-          <p class="lead">Étudiant en Master Réseaux et Cybersécurité à Sorbonne Université, je me spécialise en conception d'infrastructures réseau, test d'intrusion et administration système. Je pratique la sécurité offensive sur Root-Me (<strong>3080 pts</strong>) et je participe à des compétitions CTF.</p>
+        <div class="lead-col reveal">
+          <p class="hero-kicker">[yanis@lab ~]$ whoami</p>
+          <h2 class="glitch" data-text="Sécurité offensive &amp; automatisation">Sécurité offensive &amp; automatisation</h2>
+          <p class="lead">Étudiant en <strong>M2 Réseaux et Sécurité</strong> à Sorbonne Université, je croise deux pratiques au quotidien : la sécurité offensive et l'automatisation. Je pratique le pentest sur Root-Me, je concours en CTF (qualifications HackDay ESIEE Paris) et je conçois des infrastructures réseau sécurisées.</p>
           <p class="cta">
-            <a class="btn" href="#projects">Voir mes projets</a>
-            <a class="btn ghost" href="#contact">Me contacter</a>
+            <a class="btn" href="#projects">./voir_projets.sh</a>
+            <a class="btn ghost" href="#contact">./contact.sh</a>
           </p>
+          <div class="stats-row">
+            <div class="stat">
+              <span class="stat-num" data-count="3080">0</span>
+              <span class="stat-label">pts Root-Me</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="13">0</span>
+              <span class="stat-label">projets &amp;<br>réalisations</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num stat-text">CTF</span>
+              <span class="stat-label">Qualifications<br>HackDay ESIEE Paris</span>
+            </div>
+          </div>
         </div>
-        <aside class="info-card">
-          <h3>En bref</h3>
-          <ul>
-            <li><strong>Formation :</strong> Master Réseaux & Cybersécurité, Sorbonne Université</li>
-            <li><strong>Localisation :</strong> Paris, France</li>
-            <li><strong>Root-Me :</strong> 3080 pts</li>
-            <li><strong>Domaines :</strong> Architecture réseau, pentest, administration système</li>
-            <li><strong>Langages :</strong> C/C++, Python, Java, Bash</li>
-          </ul>
+
+        <aside class="terminal reveal" aria-label="Terminal de démonstration">
+          <div class="terminal-bar">
+            <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+            <span class="terminal-title">yanis@lab: ~/recon</span>
+          </div>
+          <pre class="terminal-body" id="terminal-body" aria-hidden="true"></pre>
         </aside>
       </div>
     </section>
 
     <!-- ===== PARCOURS ===== -->
     <section id="parcours" class="wrap section">
-      <h2>Parcours</h2>
+      <h2><span class="sec-num">01.</span> Parcours</h2>
       <div class="parcours-grid">
-        <article class="parcours-item">
-          <span class="parcours-date">2025 — En cours</span>
-          <h3>Master Réseaux & Cybersécurité</h3>
+        <article class="parcours-item tilt reveal">
+          <span class="parcours-date">2026 — En cours</span>
+          <h3>M2 Réseaux et Sécurité</h3>
           <p class="parcours-school">Sorbonne Université, Paris</p>
-          <p>Architecture et sécurité des réseaux, protocoles, administration système avancée et sécurité des systèmes d'information.</p>
+          <p>Sécurité des réseaux et des systèmes d'information, sécurité offensive, architecture d'infrastructures sécurisées, supervision et administration système avancée.</p>
         </article>
-        <article class="parcours-item">
+        <article class="parcours-item tilt reveal">
+          <span class="parcours-date">2025 — 2026</span>
+          <h3>M1 Réseaux et Sécurité</h3>
+          <p class="parcours-school">Sorbonne Université, Paris</p>
+          <p>Architecture et protocoles réseau, routage et commutation, programmation réseau, administration Linux et fondements de la sécurité.</p>
+        </article>
+        <article class="parcours-item tilt reveal">
           <span class="parcours-date">2022 — 2025</span>
           <h3>Licence Informatique</h3>
           <p class="parcours-school">Université Gustave Eiffel</p>
@@ -121,13 +149,13 @@
 
     <!-- ===== PROJETS ===== -->
     <section id="projects" class="wrap section">
-      <h2>Projets & réalisations</h2>
+      <h2><span class="sec-num">02.</span> Projets &amp; réalisations</h2>
 
       <!-- ——— Réseaux & Cybersécurité ——— -->
-      <h3 class="category-title">Réseaux & Cybersécurité</h3>
+      <h3 class="category-title">Réseaux &amp; Cybersécurité</h3>
       <div class="projects-grid">
 
-        <article class="project-card">
+        <article class="project-card tilt reveal">
           <span class="tag tag-network">Réseaux</span>
           <h3>Infrastructure réseau d'entreprise simulée</h3>
           <div class="project-content">
@@ -136,7 +164,7 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card tilt reveal">
           <span class="tag tag-security">Sécurité offensive</span>
           <h3>Root-Me — Challenges de sécurité (3080 pts)</h3>
           <div class="project-content">
@@ -145,16 +173,16 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card tilt reveal">
           <span class="tag tag-event">Compétition CTF</span>
-          <h3>HackDay ESIEE Paris — Qualifications virtuelles</h3>
+          <h3>HackDay ESIEE Paris — Qualifications</h3>
           <div class="project-content">
-            <p>Participation aux qualifications virtuelles du HackDay organisé par l'ESIEE Paris. Résolution de challenges de type Capture The Flag (CTF) en équipe : épreuves de sécurité web, analyse réseau, stéganographie et reverse engineering dans un temps imparti.</p>
+            <p>Participation aux qualifications du HackDay organisé par l'ESIEE Paris. Résolution de challenges de type Capture The Flag (CTF) en équipe : épreuves de sécurité web, analyse réseau, stéganographie et reverse engineering dans un temps imparti.</p>
             <p class="meta"><strong>Format :</strong> CTF en équipe, qualifications en ligne</p>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card tilt reveal">
           <span class="tag tag-security">Outil réseau</span>
           <h3>Scanner TCP SYN — C++</h3>
           <div class="project-content">
@@ -163,31 +191,31 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card tilt reveal">
           <span class="tag tag-security">Détection</span>
-          <h3>Honeypots & pipeline de détection</h3>
+          <h3>Honeypot &amp; analyse de logs</h3>
           <div class="project-content">
-            <p>Déploiement et supervision de honeypots pour capter et analyser les attaques réseau en temps réel. Centralisation des logs, parsers automatisés, enrichissement (réputation IP, géolocalisation) et visualisation sur dashboard de supervision.</p>
-            <p class="meta"><strong>Tech :</strong> Python, Docker, analyse de logs</p>
+            <p>Expérimentation autour des honeypots : collecte de logs de tentatives de connexion, parsing en Python et mise en forme des résultats (adresses sources, identifiants testés) pour en dégager des tendances.</p>
+            <p class="meta"><strong>Tech :</strong> Python, analyse de logs</p>
           </div>
         </article>
 
       </div>
 
       <!-- ——— Développement & Systèmes ——— -->
-      <h3 class="category-title">Développement & Systèmes</h3>
+      <h3 class="category-title">Développement &amp; Systèmes</h3>
       <div class="projects-grid">
 
-        <article class="project-card">
+        <article class="project-card tilt reveal">
           <span class="tag tag-dev">Compilation</span>
-          <h3>Analyseur & compilateur ASM — tpc</h3>
+          <h3>Analyseur &amp; compilateur ASM — tpc</h3>
           <div class="project-content">
             <p><strong>Nov. 2024 – Janv. 2025 · Université Gustave Eiffel</strong> — En binôme : compilateur complet pour <em>tpc</em> (sous-ensemble de C). Lexer/parser (Flex/Bison), construction d'AST, détection d'erreurs sémantiques et génération de code assembleur x86.</p>
             <p class="meta"><strong>Tech :</strong> Flex, Bison, C, assembleur x86</p>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card tilt reveal">
           <span class="tag tag-dev">Algorithmique</span>
           <h3>Compression d'images — QuadTree</h3>
           <div class="project-content">
@@ -196,16 +224,16 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card tilt reveal">
           <span class="tag tag-dev">Web</span>
-          <h3>Application web & BDD — Flask / PostgreSQL</h3>
+          <h3>Application web &amp; BDD — Flask / PostgreSQL</h3>
           <div class="project-content">
             <p>Application de gestion de commandes (Fleuropa). Conception du schéma relationnel, authentification sécurisée, suivi des commandes en temps réel et module de paiement.</p>
             <p class="meta"><strong>Tech :</strong> Python, Flask, PostgreSQL, HTML/CSS</p>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card tilt reveal">
           <span class="tag tag-dev">Jeu</span>
           <h3>Jeu stratégique type Cascadia — Java</h3>
           <div class="project-content">
@@ -214,7 +242,7 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card tilt reveal">
           <span class="tag tag-dev">Simulation</span>
           <h3>Abeilles vs Frelons — C</h3>
           <div class="project-content">
@@ -223,7 +251,7 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card tilt reveal">
           <span class="tag tag-dev">Algorithmique</span>
           <h3>Enveloppe convexe — C</h3>
           <div class="project-content">
@@ -232,7 +260,7 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card tilt reveal">
           <span class="tag tag-dev">Jeu</span>
           <h3>Ricocheep — Python</h3>
           <div class="project-content">
@@ -241,9 +269,9 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card tilt reveal">
           <span class="tag tag-dev">Création</span>
-          <h3>Création vidéo & médias</h3>
+          <h3>Création vidéo &amp; médias</h3>
           <div class="project-content">
             <p>Réalisation de contenus VFX et motion design. Intros personnalisées, vente via plateforme en ligne et tutoriels de motion design.</p>
             <p class="meta"><strong>Outils :</strong> Cinema 4D, After Effects</p>
@@ -255,87 +283,87 @@
 
     <!-- ===== COMPÉTENCES (icônes) ===== -->
     <section id="skills-icons" class="wrap section">
-      <h2>Compétences</h2>
+      <h2><span class="sec-num">03.</span> Compétences</h2>
       <div class="icons-grid">
 
-        <div class="skill-card">
+        <div class="skill-card tilt reveal" tabindex="0">
           <img src="images/icons8-burp-suite-50.png" alt="Burp Suite" loading="lazy">
           <span class="badge">Burp Suite</span>
           <div class="tooltip"><strong>Burp Suite</strong><p>Proxy, repeater, intruder, scanner — audit de sécurité d'applications web.</p></div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card tilt reveal" tabindex="0">
           <img src="images/icons8-python-48.png" alt="Python" loading="lazy">
           <span class="badge">Python</span>
           <div class="tooltip"><strong>Python</strong><p>Scripts réseau, outils de pentest, parsing de logs, automatisation.</p></div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card tilt reveal" tabindex="0">
           <img src="images/icons8-c++-48.png" alt="C++" loading="lazy">
           <span class="badge">C++</span>
           <div class="tooltip"><strong>C++</strong><p>Scanner SYN performant, programmation réseau bas niveau.</p></div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card tilt reveal" tabindex="0">
           <img src="images/java.png" alt="Java" loading="lazy">
           <span class="badge">Java</span>
           <div class="tooltip"><strong>Java</strong><p>Projets académiques (Java 23), architecture modulaire.</p></div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card tilt reveal" tabindex="0">
           <img src="images/icons8-haskel-48.png" alt="Haskell" loading="lazy">
           <span class="badge">Haskell</span>
           <div class="tooltip"><strong>Haskell</strong><p>Programmation fonctionnelle, raisonnement sur les types.</p></div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card tilt reveal" tabindex="0">
           <img src="images/linux.png" alt="Linux" loading="lazy">
           <span class="badge">Linux</span>
           <div class="tooltip"><strong>Linux</strong><p>Administration système, Bash, configuration réseau, durcissement.</p></div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card tilt reveal" tabindex="0">
           <img src="images/icons8-logo-javascript-48.png" alt="JavaScript" loading="lazy">
           <span class="badge">JavaScript</span>
           <div class="tooltip"><strong>JavaScript</strong><p>Interfaces web, outils front-end.</p></div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card tilt reveal" tabindex="0">
           <img src="images/sitelogo-nmap-software-llc-168.90.png" alt="Nmap" loading="lazy">
           <span class="badge">Nmap</span>
           <div class="tooltip"><strong>Nmap</strong><p>Scan de services, scripts NSE, cartographie réseau.</p></div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card tilt reveal" tabindex="0">
           <img src="images/icons8-php-48.png" alt="PHP" loading="lazy">
           <span class="badge">PHP</span>
           <div class="tooltip"><strong>PHP</strong><p>Développement backend, notions web.</p></div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card tilt reveal" tabindex="0">
           <img src="images/sql.png" alt="SQL" loading="lazy">
           <span class="badge">SQL</span>
           <div class="tooltip"><strong>SQL</strong><p>Modélisation relationnelle, requêtes PostgreSQL.</p></div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card tilt reveal" tabindex="0">
           <img src="images/icons8-programmation-en-c-48.png" alt="C" loading="lazy">
           <span class="badge">C</span>
           <div class="tooltip"><strong>C</strong><p>Programmation système, sockets, formats binaires.</p></div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card tilt reveal" tabindex="0">
           <img src="images/Wireshark_Icon.png" alt="Wireshark" loading="lazy">
           <span class="badge">Wireshark</span>
           <div class="tooltip"><strong>Wireshark</strong><p>Analyse PCAP, filtres avancés, diagnostic réseau.</p></div>
         </div>
 
         <!-- Carte "..." -->
-        <div class="skill-card extra">
+        <div class="skill-card extra tilt reveal" tabindex="0">
           <div class="dots">...</div>
           <span class="badge">Autres</span>
           <div class="tooltip">
-            <strong>Autres outils & technologies</strong>
+            <strong>Autres outils &amp; technologies</strong>
             <p>iptables • Flex / Bison • Bash • Docker • Git • HTML / CSS • Flask • Makefile • Jira • PostgreSQL</p>
           </div>
         </div>
@@ -345,20 +373,31 @@
 
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="wrap section">
-      <h2>Contact</h2>
-      <p>N'hésitez pas à me contacter pour toute opportunité ou question.</p>
-      <ul class="contact-list">
-        <li>Email : <a href="mailto:maatouk.yanis@gmail.com">maatouk.yanis@gmail.com</a></li>
-        <li>GitHub : <a href="https://github.com/YanisMa" target="_blank" rel="noopener">github.com/YanisMa</a></li>
-        <li>LinkedIn : <a href="https://linkedin.com/in/yanisma" target="_blank" rel="noopener">linkedin.com/in/yanisma</a></li>
-      </ul>
+      <h2><span class="sec-num">04.</span> Contact</h2>
+      <p class="contact-intro">N'hésitez pas à me contacter pour toute opportunité ou question.</p>
+      <div class="contact-grid">
+        <a class="contact-card tilt reveal" href="mailto:maatouk.yanis@gmail.com">
+          <span class="contact-proto">mailto://</span>
+          <span class="contact-value">maatouk.yanis@gmail.com</span>
+        </a>
+        <a class="contact-card tilt reveal" href="https://github.com/YanisMa" target="_blank" rel="noopener">
+          <span class="contact-proto">github://</span>
+          <span class="contact-value">github.com/YanisMa</span>
+        </a>
+        <a class="contact-card tilt reveal" href="https://linkedin.com/in/yanisma" target="_blank" rel="noopener">
+          <span class="contact-proto">linkedin://</span>
+          <span class="contact-value">linkedin.com/in/yanisma</span>
+        </a>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <p>© 2026 Yanis — Portfolio</p>
+      <p><span class="prompt-sign">~$</span> exit — © 2026 Yanis — Portfolio</p>
     </div>
   </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
