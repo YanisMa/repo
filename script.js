@@ -4,7 +4,6 @@
    2. Terminal auto-typé (hero)
    3. Tilt 3D des cartes
    4. Compteurs animés
-   5. Révélation au scroll
 ========================================= */
 
 (function () {
@@ -238,29 +237,4 @@
     counters.forEach((c) => io.observe(c));
   }
 
-  /* =========================================
-     5. Révélation au scroll
-  ========================================= */
-  const revealEls = document.querySelectorAll('.reveal');
-  if (reducedMotion) {
-    revealEls.forEach((el) => el.classList.add('visible'));
-  } else {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
-    // révélation immédiate de ce qui est déjà à l'écran,
-    // l'observer ne gère que ce qui arrive au scroll
-    revealEls.forEach((el) => {
-      if (inViewport(el)) {
-        el.classList.add('visible');
-      } else {
-        io.observe(el);
-      }
-    });
-  }
 })();

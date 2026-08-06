@@ -182,7 +182,6 @@ img { max-width: 100%; }
   backdrop-filter: blur(16px) saturate(140%);
   background: linear-gradient(180deg, rgba(5, 8, 15, .92), rgba(5, 8, 15, .78));
   border-bottom: 1px solid rgba(148, 190, 255, .12);
-  animation: fade-in-down .6s ease both;
 }
 
 .site-header::after {
@@ -198,11 +197,6 @@ img { max-width: 100%; }
 @keyframes header-glow {
   0%   { opacity: .3; }
   100% { opacity: .7; }
-}
-
-@keyframes fade-in-down {
-  from { opacity: 0; transform: translateY(-12px); }
-  to   { opacity: 1; transform: translateY(0); }
 }
 
 .header-grid {
@@ -893,28 +887,6 @@ img { max-width: 100%; }
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
   background: rgba(0, 0, 0, .35);
-}
-
-/* =========================================
-   Révélation au scroll
-========================================= */
-/* masqué au départ seulement si le JS tourne, sinon le contenu
-   resterait invisible en cas d'échec de chargement du script */
-.js .reveal {
-  opacity: 0;
-  transform: translateY(26px);
-  transition: opacity .7s ease, transform .7s cubic-bezier(.22, .61, .36, 1);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* le tilt JS pose transform inline : transition courte une fois révélé */
-.reveal.visible.tilt,
-.reveal.visible.terminal {
-  transition: opacity .7s ease, transform .18s ease,
-    border-color .3s ease, box-shadow .3s ease;
 }
 
 /* =========================================
